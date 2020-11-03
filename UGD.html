@@ -29,8 +29,13 @@
             Tebakan anda Salah
             <p v-if="counter > 0">Kamu masih punya {{ counter }} kesempatan lagi</p>
             <p v-if="counter == 0">Kamu Kalah</p>
-
-            <button @click="mulai" type="reset">Mulai lagi</button>
+            <p v-if="counter == 0">Yang bener {{ angkaBenar }}</p>
+            <div v-if="counter == 0">
+                <button @click="lagi" type="reset"> lagi</button>
+                </div>
+            <div v-else-if="counter > 0">
+                <button @click="mulai" type="reset">Mulai lagi</button>
+                </div>
         </div>
         <div class="card">
             <div class="card-body" style="margin: auto;">

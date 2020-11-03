@@ -25,11 +25,15 @@ new Vue({
               this.counter--;
           }
           e.preventDefault();
+          console.log(angkaBenar)
       },
       mulai() {
           this.jawaban = false;
           this.clicked = false;
           this.angkaInput = null;
-      }
+      },
+      lagi(){
+        location.reload();
+    }
   },
 });
