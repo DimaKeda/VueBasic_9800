@@ -37,3 +37,38 @@ new Vue({
     }
   },
 });
+
+new Vue({
+    el: "#app1",
+    data: {
+        todos:[
+            
+        ],
+    },
+    methods: {
+        simpan() {
+            let catatan = document.getElementById('catatan');
+            let judul = document.getElementById('judul');
+            let prioritas = document.getElementById('prioritas');
+            
+            let todo = {
+                judul : judul.value,
+                prioritas : prioritas.value,
+                catatan : catatan.value,
+            }
+            document.getElementById('catatan').value="";
+            document.getElementById('judul').value="";
+            document.getElementById('prioritas').value="";
+            this.todos.push(todo);
+            console.log(this.todos);
+        },
+        reset(){
+            document.getElementById('catatan').value="";
+            document.getElementById('judul').value="";
+            document.getElementById('prioritas').value="";
+        },
+        hapus(index){
+            this.todos.splice(index,1);
+        },
+    },
+});
